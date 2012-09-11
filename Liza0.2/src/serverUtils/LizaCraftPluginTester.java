@@ -6,7 +6,12 @@ import java.util.Map;
 
 import org.bukkit.Server;
 import org.bukkit.event.Event;
+import org.bukkit.plugin.InvalidDescriptionException;
+import org.bukkit.plugin.InvalidPluginException;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.UnknownDependencyException;
+
+import exceptions.LizaPluginException;
 
 import LizaCraft.LizaCraftServer;
 import LizaCraft.Events.EventEnabler;
@@ -178,15 +183,20 @@ public class LizaCraftPluginTester {
 	 *            the plugin file
 	 * @return the plugin
 	 */
-	public Plugin loadPlugin(File file) {
+	public Plugin loadPlugin (File file) throws LizaPluginException {
 		Plugin ret = null;
 
-		try {
-			ret = this.server.getPluginManager().loadPlugin(file);
+			try {
+				ret = this.server.getPluginManager().loadPlugin(file);
+			} catch (UnknownDependencyException | InvalidPluginException
+					| InvalidDescriptionException e) {
+				// this is a critical error, so throw an exception to the user
+				// to inform him about it
+				LizaPluginException pluginException = new LizaPluginException(e);
+				throw pluginException;
+			}
+			
 			this.server.getPluginManager().enablePlugin(ret);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 
 		if (ret != null) {
 			this.plugins.put(file, ret);

@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.UUID;
 
@@ -715,6 +717,16 @@ public class LizaCraftWorld implements LizaWorld{
 		return this.world.spawn(arg0, arg1); 
 	}
 
+	public List<LizaEntity> spawnMultiple(Map<Location, Class<Entity>> objects) {
+		List<LizaEntity> result = new ArrayList<LizaEntity>();
+		for (Entry<Location, Class<Entity>> object : objects.entrySet()) {
+			Entity spawned = this.spawn(object.getKey(), object.getValue());
+			result.add(new LizaCraftEntity(spawned));
+		}
+		
+		return result;
+	}
+	
 	/* (non-Javadoc)
 	 * @see org.bukkit.World#spawnArrow(org.bukkit.Location, org.bukkit.util.Vector, float, float)
 	 */
