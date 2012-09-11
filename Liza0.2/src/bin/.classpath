@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="lizaTest/" kind="src" path=""/>
+	<classpathentry excluding="lizaTest/|data/" kind="src" path=""/>
 	<classpathentry kind="src" path="lizaTest"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/bukkit-1.1-R6.jar"/>

@@ -12,11 +12,11 @@ import org.bukkit.craftbukkit.Main;
  */
 public class LizaServerThread extends Thread {
 
-/** The out. */
-private PrintStream out;
-    
-    /** The args. */
-    private final String args[] = {"-h", "localhost", "-p", "25565"};
+	/** server start args */
+	private String[] args;
+	
+	/** The out. */
+	private PrintStream out;
     
     /**
      * Instantiates a new liza server thread.
@@ -26,7 +26,15 @@ private PrintStream out;
     public LizaServerThread(String name) {
         super(name);
         try {
-            out = new PrintStream(new FileOutputStream(new File("liza-out.txt"), false));
+        	final String filename = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_OUTFILE_PROPERTY);
+        	FileOutputStream fOut = new FileOutputStream(new File(filename), false);
+            out = new PrintStream(fOut);
+            
+            args = new String[4];
+            args[0] = "-h";
+            args[1] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_HOST_PROPERTY);
+            args[2] = "-p";
+            args[3] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_PORT_PROPERTY);
         } catch (FileNotFoundException e) {
             
         }
