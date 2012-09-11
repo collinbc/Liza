@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Slime;
-import Liza.LizaSlime;
+
+import LizaInterface.LizaSlime;
 
 /**
  *  LizaCraftSlime is the Liza entity representation of

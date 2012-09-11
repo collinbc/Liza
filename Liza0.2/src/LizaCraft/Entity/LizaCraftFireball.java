@@ -3,7 +3,7 @@ package LizaCraft.Entity;
 import org.bukkit.entity.Fireball;
 import org.bukkit.util.Vector;
 
-import Liza.LizaFireball;
+import LizaInterface.LizaFireball;
 
 /**
  *  LizaCraftFireball is the Liza entity representation of

@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.FallingSand;
 
-import Liza.LizaFallingSand;
+import LizaInterface.LizaFallingSand;
 
 /**
  * LizeCraftFallingSand is the Liza entity representation of the Bukkit

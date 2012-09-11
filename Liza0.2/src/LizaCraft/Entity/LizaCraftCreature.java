@@ -5,8 +5,9 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Creature;
 import org.bukkit.entity.LivingEntity;
-import Liza.LizaCreature;
-import Liza.LizaLivingEntity;
+
+import LizaInterface.LizaCreature;
+import LizaInterface.LizaLivingEntity;
 
 /**
  *  LizeCraftCreature is the Liza entity representation of

@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Ghast;
 
-import Liza.LizaGhast;
+import LizaInterface.LizaGhast;
 
 /**
  * LizaCraftGhast is the Liza entity representation of the Bukkit Ghast class.

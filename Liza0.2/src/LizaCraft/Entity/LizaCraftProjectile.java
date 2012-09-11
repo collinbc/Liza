@@ -6,8 +6,9 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Projectile;
-import Liza.LizaLivingEntity;
-import Liza.LizaProjectile;
+
+import LizaInterface.LizaLivingEntity;
+import LizaInterface.LizaProjectile;
 
 /**
  *  LizeCraftProjectile is the Liza entity representation of

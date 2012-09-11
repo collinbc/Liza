@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Vehicle;
-import Liza.LizaVehicle;
+
+import LizaInterface.LizaVehicle;
 
 /**
  *  LizeCraftVehicle is the Liza entity representation of

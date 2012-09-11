@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Explosive;
 
-import Liza.LizaExplosive;
+import LizaInterface.LizaExplosive;
 
 /**
  * LizeCraftExplosive is the Liza entity representation of the Bukkit Explosive

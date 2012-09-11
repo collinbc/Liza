@@ -4,7 +4,7 @@ import org.bukkit.Art;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Painting;
 
-import Liza.LizaPainting;
+import LizaInterface.LizaPainting;
 
 /**
  * LizeCraftPainting is the Liza entity representation of the Bukkit Painting

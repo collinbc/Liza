@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Pig;
-import Liza.LizaPig;
+
+import LizaInterface.LizaPig;
 
 /**
  *  LizaCraftPig is the Liza entity representation of

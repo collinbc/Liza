@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Squid;
 
-import Liza.LizaSquid;
+import LizaInterface.LizaSquid;
 
 /**
  * LizaCraftSquid is the Liza entity representation of the Bukkit Squid class.

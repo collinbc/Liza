@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.LightningStrike;
 
-import Liza.LizaLightningStrike;
+import LizaInterface.LizaLightningStrike;
 
 /**
  * The Class LizaCraftLightningStrike.

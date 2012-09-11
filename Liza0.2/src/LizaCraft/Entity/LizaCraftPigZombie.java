@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.PigZombie;
-import Liza.LizaPigZombie;
+
+import LizaInterface.LizaPigZombie;
 
 /**
  *  LizaCraftPigZombie is the Liza entity representation of

@@ -11,14 +11,14 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Projectile;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import Liza.LizaArrow;
-import Liza.LizaBlock;
-import Liza.LizaEgg;
-import Liza.LizaEntity;
-import Liza.LizaLivingEntity;
-import Liza.LizaPlayer;
-import Liza.LizaSnowball;
 import LizaCraft.Block.LizaCraftBlock;
+import LizaInterface.LizaArrow;
+import LizaInterface.LizaBlock;
+import LizaInterface.LizaEgg;
+import LizaInterface.LizaEntity;
+import LizaInterface.LizaLivingEntity;
+import LizaInterface.LizaPlayer;
+import LizaInterface.LizaSnowball;
 
 /**
  *  LizaCraftLivingEntity is the Liza entity representation of

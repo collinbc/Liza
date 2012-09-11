@@ -14,8 +14,8 @@ import org.bukkit.plugin.EventExecutor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import Liza.LizaListener;
-import LizaCraft.LizaCraftTestModule;
+import LizaInterface.LizaListener;
+import serverUtils.LizaCraftTestModule;
 
 /**
  * The Class LizaPlugin.

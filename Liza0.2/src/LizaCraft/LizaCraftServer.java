@@ -35,8 +35,8 @@ import org.bukkit.plugin.ServicesManager;
 import org.bukkit.plugin.messaging.Messenger;
 import org.bukkit.scheduler.BukkitScheduler;
 
-import Liza.LizaServer;
-import Liza.LizaWorld;
+import LizaInterface.LizaServer;
+import LizaInterface.LizaWorld;
 
 import com.avaje.ebean.config.ServerConfig;
 

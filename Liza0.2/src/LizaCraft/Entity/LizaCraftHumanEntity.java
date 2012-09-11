@@ -13,7 +13,8 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionAttachment;
 import org.bukkit.permissions.PermissionAttachmentInfo;
 import org.bukkit.plugin.Plugin;
-import Liza.LizaHumanEntity;
+
+import LizaInterface.LizaHumanEntity;
 
 /**
  *  LizaCraftHumanEntity is the Liza HumanEntity representation of

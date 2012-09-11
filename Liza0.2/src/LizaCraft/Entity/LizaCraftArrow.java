@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Arrow;
-import Liza.LizaArrow;
+
+import LizaInterface.LizaArrow;
 
 /**
  * LizeCraftArrow is the Liza entity representation of the Bukkit Arrow class.

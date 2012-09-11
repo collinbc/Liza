@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.MushroomCow;
-import Liza.LizaMushroomCow;
+
+import LizaInterface.LizaMushroomCow;
 
 /**
  * LizaCraftMushroomCow is the Liza entity representation of the Bukkit

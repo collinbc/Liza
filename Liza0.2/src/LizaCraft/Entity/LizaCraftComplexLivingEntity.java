@@ -4,8 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 import org.bukkit.entity.ComplexEntityPart;
 import org.bukkit.entity.ComplexLivingEntity;
-import Liza.LizaComplexEntityPart;
-import Liza.LizaComplexLivingEntity;
+
+import LizaInterface.LizaComplexEntityPart;
+import LizaInterface.LizaComplexLivingEntity;
 
 /**
  *  LizaCraftComplexLivingEntity is the Liza entity representation of

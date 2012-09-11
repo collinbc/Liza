@@ -3,7 +3,7 @@ package LizaCraft.Entity;
 import org.bukkit.entity.AnimalTamer;
 import org.bukkit.entity.Wolf;
 
-import Liza.LizaWolf;
+import LizaInterface.LizaWolf;
 
 /**
  * LizaCraftWolf is the Liza entity representation of the Bukkit CraftWolf

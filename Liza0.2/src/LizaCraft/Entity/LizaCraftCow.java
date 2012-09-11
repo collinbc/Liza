@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Cow;
-import Liza.LizaCow;
+
+import LizaInterface.LizaCow;
 
 /**
  * LizaCraftCow is the Liza entity representation of the Bukkit CraftCow class.

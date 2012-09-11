@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Monster;
-import Liza.LizaMonster;
+
+import LizaInterface.LizaMonster;
 
 /**
  *  LizaCraftMonster is the Liza entity representation of

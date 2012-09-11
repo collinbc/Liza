@@ -3,5 +3,9 @@
 	<classpathentry excluding="lizaTest/" kind="src" path=""/>
 	<classpathentry kind="src" path="lizaTest"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/collinbc/Programming Projects/Liza/Liza0.2/src/lib/bukkit-1.1-R6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/collinbc/Programming Projects/Liza/Liza0.2/src/lib/craftbukkit-1.1-R6-20120301.142116-2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/collinbc/Programming Projects/Liza/Liza0.2/src/lib/mockito-all-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/collinbc/Programming Projects/Liza/Liza0.2/src/lib/powermock-mockito-1.4.12-full.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Flying;
 
-import Liza.LizaFlying;
+import LizaInterface.LizaFlying;
 
 /**
  *  LizaCraftFlying is the Liza entity representation of

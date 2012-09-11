@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Creeper;
-import Liza.LizaCreeper;
+
+import LizaInterface.LizaCreeper;
 
 /**
  * LizaCraftCreeper is the Liza entity representation of the Bukkit Creeper

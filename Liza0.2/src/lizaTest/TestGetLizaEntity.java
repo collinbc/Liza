@@ -16,11 +16,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import Liza.LizaEntity;
-import Liza.LizaServer;
-import Liza.LizaWorld;
-import LizaCraft.LizaCraftTestModule;
 import LizaCraft.LizaCraftWorld;
+import LizaInterface.LizaEntity;
+import LizaInterface.LizaServer;
+import LizaInterface.LizaWorld;
+import LizaInterfaceCraft.LizaCraftTestModule;
 
 
 // TODO: Auto-generated Javadoc

@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Zombie;
 
-import Liza.LizaZombie;
+import LizaInterface.LizaZombie;
 
 /**
  * LizaCraftZombie is the Liza entity representation of the Bukkit Zombie class.

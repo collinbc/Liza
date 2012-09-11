@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Fish;
-import Liza.LizaFish;
+
+import LizaInterface.LizaFish;
 
 /**
  * LizaCraftFish is the Liza entity representation of the Bukkit Fish class.

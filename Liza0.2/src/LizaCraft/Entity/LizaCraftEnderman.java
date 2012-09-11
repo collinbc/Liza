@@ -2,7 +2,8 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Enderman;
 import org.bukkit.material.MaterialData;
-import Liza.LizaEnderman;
+
+import LizaInterface.LizaEnderman;
 
 /**
  * LizaCraftEnderman is the Liza entity representation of the Bukkit Enderman

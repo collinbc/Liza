@@ -2,7 +2,8 @@ package LizaCraft.Entity;
 
 import org.bukkit.DyeColor;
 import org.bukkit.entity.Sheep;
-import Liza.LizaSheep;
+
+import LizaInterface.LizaSheep;
 
 /**
  * LizaCraftSheep is the Liza entity representation of the Bukkit CraftSheep

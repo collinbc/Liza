@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.MagmaCube;
 
-import Liza.LizaMagmaCube;
+import LizaInterface.LizaMagmaCube;
 
 /**
  * LizaCraftMagmaCube is the Liza entity representation of the Bukkit MagmaCube

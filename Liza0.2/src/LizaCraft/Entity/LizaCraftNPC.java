@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.NPC;
 
-import Liza.LizaNPC;
+import LizaInterface.LizaNPC;
 
 /**
  * LizaCraftnpc is the Liza entity representation of the Bukkit npc class.

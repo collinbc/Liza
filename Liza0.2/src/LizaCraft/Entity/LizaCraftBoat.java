@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Boat;
-import Liza.LizaBoat;
+
+import LizaInterface.LizaBoat;
 
 /**
  * The Class LizaCraftBoat.

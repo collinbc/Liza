@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Snowball;
-import Liza.LizaSnowball;
+
+import LizaInterface.LizaSnowball;
 
 /**
  *  LizaCraftSnowball is the Liza entity representation of

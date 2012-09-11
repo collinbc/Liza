@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.SmallFireball;
-import Liza.LizaSmallFireball;
+
+import LizaInterface.LizaSmallFireball;
 
 /**
  * LizaCraftSmallFireball is the Liza entity representation of the Bukkit

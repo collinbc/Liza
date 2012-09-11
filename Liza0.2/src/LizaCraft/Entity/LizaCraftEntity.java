@@ -1,11 +1,11 @@
 package LizaCraft.Entity;
 
 //Liza Imports
-import Liza.LizaEntity;
-import Liza.LizaServer;
-import Liza.LizaWorld;
 import LizaCraft.LizaCraftServer;
 import LizaCraft.LizaCraftWorld;
+import LizaInterface.LizaEntity;
+import LizaInterface.LizaServer;
+import LizaInterface.LizaWorld;
 
 //Java Imports
 import java.util.ArrayList;

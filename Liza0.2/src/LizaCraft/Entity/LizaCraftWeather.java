@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Weather;
 
-import Liza.LizaWeather;
+import LizaInterface.LizaWeather;
 
 /**
  * LizeCraftWeather is the Liza entity representation of the Bukkit weather

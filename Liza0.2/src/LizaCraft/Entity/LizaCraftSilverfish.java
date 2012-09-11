@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Silverfish;
 
-import Liza.LizaSilverfish;
+import LizaInterface.LizaSilverfish;
 
 /**
  * LizaCraftSilverfish is the Liza entity representation of the Bukkit

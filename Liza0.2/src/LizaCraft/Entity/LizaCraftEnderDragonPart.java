@@ -2,8 +2,8 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.EnderDragonPart;
 
-import Liza.LizaEnderDragon;
-import Liza.LizaEnderDragonPart;
+import LizaInterface.LizaEnderDragon;
+import LizaInterface.LizaEnderDragonPart;
 
 /**
  *  LizaCraftEnderDragonPart is the Liza entity representation of

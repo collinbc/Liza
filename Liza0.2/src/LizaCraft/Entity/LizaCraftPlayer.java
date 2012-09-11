@@ -16,7 +16,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.map.MapView;
 import org.bukkit.plugin.Plugin;
 
-import Liza.LizaPlayer;
+import LizaInterface.LizaPlayer;
 
 /**
  * LizaCraftPlayer is the Liza HumanEntity representation of the Bukkit Player

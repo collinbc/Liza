@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Spider;
-import Liza.LizaSpider;
+
+import LizaInterface.LizaSpider;
 
 /**
  * LizaCraftSpider is the Liza entity representation of the Bukkit Spider class.

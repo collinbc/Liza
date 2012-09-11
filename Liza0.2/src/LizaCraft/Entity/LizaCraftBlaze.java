@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Blaze;
-import Liza.LizaBlaze;
+
+import LizaInterface.LizaBlaze;
 
 /**
  * LizaCraftBlaze is the Liza entity representation of the Bukkit Blaze class.

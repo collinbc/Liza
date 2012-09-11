@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Snowman;
 
-import Liza.LizaSnowman;
+import LizaInterface.LizaSnowman;
 
 /**
  * LizaCraftSnowman is the Liza entity representation of the Bukkit Snowman

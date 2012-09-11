@@ -26,9 +26,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import Liza.LizaEntity;
-import Liza.LizaWorld;
 import LizaCraft.LizaCraftWorld;
+import LizaInterface.LizaEntity;
+import LizaInterface.LizaWorld;
 
 
 // TODO: Auto-generated Javadoc

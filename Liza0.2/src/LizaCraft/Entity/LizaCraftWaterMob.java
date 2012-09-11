@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.WaterMob;
 
-import Liza.LizaWaterMob;
+import LizaInterface.LizaWaterMob;
 
 /**
  * LizaCraftWaterMob is the Liza entity representation of the Bukkit WaterMob

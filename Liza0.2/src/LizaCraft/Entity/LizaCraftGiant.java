@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Giant;
 
-import Liza.LizaGiant;
+import LizaInterface.LizaGiant;
 
 /**
  *  LizaCraftGiant is the Liza entity representation of

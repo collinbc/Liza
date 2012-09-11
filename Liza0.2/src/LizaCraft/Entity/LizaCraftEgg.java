@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Egg;
-import Liza.LizaEgg;
+
+import LizaInterface.LizaEgg;
 
 // TODO: Auto-generated Javadoc
 /**

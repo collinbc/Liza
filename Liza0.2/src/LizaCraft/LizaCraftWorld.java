@@ -33,9 +33,9 @@ import org.bukkit.metadata.MetadataValue;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
-import Liza.LizaEntity;
-import Liza.LizaWorld;
 import LizaCraft.Entity.LizaCraftEntity;
+import LizaInterface.LizaEntity;
+import LizaInterface.LizaWorld;
 
 /**
  *  LizeCraftWorld is the Liza world representation of

@@ -2,7 +2,7 @@ package LizaCraft.Entity;
 
 import org.bukkit.entity.Villager;
 
-import Liza.LizaVillager;
+import LizaInterface.LizaVillager;
 
 /**
  * LizaCraftVillager is the Liza entity representation of the Bukkit Villager

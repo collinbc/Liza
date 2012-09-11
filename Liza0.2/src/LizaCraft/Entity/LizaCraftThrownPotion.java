@@ -5,7 +5,7 @@ import java.util.Collection;
 import org.bukkit.entity.ThrownPotion;
 import org.bukkit.potion.PotionEffect;
 
-import Liza.LizaThrownPotion;
+import LizaInterface.LizaThrownPotion;
 
 /**
  * LizaCraftThrownPotion is the Liza entity representation of the Bukkit

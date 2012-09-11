@@ -3,7 +3,7 @@ package LizaCraft.Entity;
 import org.bukkit.entity.Minecart;
 import org.bukkit.util.Vector;
 
-import Liza.LizaMinecart;
+import LizaInterface.LizaMinecart;
 
 /**
  * The Class LizaCraftMinecart.

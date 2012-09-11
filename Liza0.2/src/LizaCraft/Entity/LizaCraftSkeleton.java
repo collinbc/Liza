@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.Skeleton;
-import Liza.LizaSkeleton;
+
+import LizaInterface.LizaSkeleton;
 
 /**
  * LizaCraftSkeleton is the Liza entity representation of the Bukkit Skeleton

@@ -3,7 +3,7 @@ package LizaCraft.Entity;
 import org.bukkit.entity.AnimalTamer;
 import org.bukkit.entity.Tameable;
 
-import Liza.LizaTameable;
+import LizaInterface.LizaTameable;
 
 /**
  *  LizaCraftTameable is the Liza entity representation of

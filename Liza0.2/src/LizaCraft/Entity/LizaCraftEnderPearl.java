@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.EnderPearl;
-import Liza.LizaEnderPearl;
+
+import LizaInterface.LizaEnderPearl;
 
 /**
  *  LizaCraftEnderPearl is the Liza entity representation of

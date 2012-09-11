@@ -1,7 +1,8 @@
 package LizaCraft.Entity;
 
 import org.bukkit.entity.EnderDragon;
-import Liza.LizaEnderDragon;
+
+import LizaInterface.LizaEnderDragon;
 
 // TODO: Auto-generated Javadoc
 /**

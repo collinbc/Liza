@@ -14,7 +14,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.SimplePluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import Liza.LizaServer;
+import LizaInterface.LizaServer;
 
 /**
  * The Class EventEnabler.

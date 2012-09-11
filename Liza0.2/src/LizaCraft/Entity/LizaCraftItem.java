@@ -3,7 +3,7 @@ package LizaCraft.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 
-import Liza.LizaItem;
+import LizaInterface.LizaItem;
 
 /**
  * LizeCraftItem is the Liza entity representation of the Bukkit Item class.

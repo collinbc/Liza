@@ -3,7 +3,7 @@ package LizaCraft.Entity;
 import org.bukkit.entity.ComplexEntityPart;
 import org.bukkit.entity.ComplexLivingEntity;
 
-import Liza.LizaComplexEntityPart;
+import LizaInterface.LizaComplexEntityPart;
 
 /**
  * LizaCraftComplexEntityPart is the Liza entity representation of the Bukkit
