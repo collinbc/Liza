@@ -15,7 +15,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import LizaInterface.LizaListener;
-import serverUtils.LizaCraftTestModule;
+import serverUtils.LizaCraftPluginTester;
 
 /**
  * The Class LizaPlugin.
@@ -29,7 +29,7 @@ public class LizaPlugin extends JavaPlugin implements Listener {
     public static final String PLUGIN_NAME = "Liza Event Listener";
     
     /** The waiting list. */
-    protected Map<Class<? extends Event>, LizaCraftTestModule> waitingList = new HashMap<Class<? extends Event>, LizaCraftTestModule>();
+    protected Map<Class<? extends Event>, LizaCraftPluginTester> waitingList = new HashMap<Class<? extends Event>, LizaCraftPluginTester>();
     
     /** The listener list. */
     private Map<Class<? extends Event>, LizaListener> listenerList = new HashMap<Class<? extends Event>, LizaListener>();
@@ -112,7 +112,7 @@ public class LizaPlugin extends JavaPlugin implements Listener {
      * @param event the event
      * @param testModule the test module
      */
-    public void waitForEvent(Class<? extends Event> event, LizaCraftTestModule testModule) {
+    public void waitForEvent(Class<? extends Event> event, LizaCraftPluginTester testModule) {
         this.waitingList.put(event, testModule);
     }
     
@@ -122,7 +122,7 @@ public class LizaPlugin extends JavaPlugin implements Listener {
      * @param event the event
      */
     public void releaseFromEvent(Event event) {
-        LizaCraftTestModule waitee = this.waitingList.remove(event.getClass());
+        LizaCraftPluginTester waitee = this.waitingList.remove(event.getClass());
         if (waitee != null) {
             waitee.release(event);
         }

@@ -1,3 +1,4 @@
+package lizaTest;
 //package lizaTest;
 //
 //import static org.junit.Assert.*;

@@ -16,8 +16,10 @@ import LizaInterface.LizaServer;
 /**
  * The Class LizaCraftTestModule.
  */
-public class LizaCraftTestModule {
+public class LizaCraftPluginTester {
 
+	private final static String DEFAULT_NAME = "LizaPluginTester";
+	
 	private ServerGrabber serverGrabber = new ServerGrabber();
 	private EventEnabler eventEnabler = new EventEnabler();
 
@@ -34,19 +36,26 @@ public class LizaCraftTestModule {
 	private Map<File, Plugin> plugins = new HashMap<File, Plugin>();
 
 	/**
-	 * Instantiates a new LizaCraftTestModule.
+	 * Instantiates a new LizaCraftPluginTester with a default name
+	 */
+	public LizaCraftPluginTester() {
+		this(DEFAULT_NAME);
+	}
+	
+	/**
+	 * Instantiates a new LizaCraftPluginTester.
 	 * 
 	 * @param name
 	 *            The name of the module
 	 */
-	public LizaCraftTestModule(String name) {
+	public LizaCraftPluginTester(String name) {
 		this.name = name;
 
 		this.eventListener = new LizaPlugin();
 	}
 
 	/**
-	 * Instantiates a new LizaCraftTestModule with an injected server. For use
+	 * Instantiates a new LizaCraftPluginTester with an injected server. For use
 	 * with testing.
 	 * 
 	 * @param name
@@ -54,7 +63,7 @@ public class LizaCraftTestModule {
 	 * @param server
 	 *            The Bukkit server
 	 */
-	public LizaCraftTestModule(String name, Server server) {
+	public LizaCraftPluginTester(String name, Server server) {
 		this(name);
 		this.server = new LizaCraftServer(server);
 	}

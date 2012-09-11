@@ -554,8 +554,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public void clearRecipes() {
-		// TODO Auto-generated method stub
-		
+		this.server.clearRecipes();
 	}
 	
 	/* (non-Javadoc)
@@ -563,8 +562,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public Inventory createInventory(InventoryHolder arg0, InventoryType arg1) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.server.createInventory(arg0, arg1);
 	}
 	
 	/* (non-Javadoc)
@@ -572,8 +570,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public Inventory createInventory(InventoryHolder arg0, int arg1) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.server.createInventory(arg0, arg1);
 	}
 	
 	/* (non-Javadoc)
@@ -581,8 +578,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public Inventory createInventory(InventoryHolder arg0, int arg1, String arg2) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.server.createInventory(arg0, arg1, arg2);
 	}
 	
 	/* (non-Javadoc)
@@ -590,8 +586,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public HelpMap getHelpMap() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.server.getHelpMap();
 	}
 	
 	/* (non-Javadoc)
@@ -599,8 +594,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public List<Recipe> getRecipesFor(ItemStack arg0) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.server.getRecipesFor(arg0);
 	}
 	
 	/* (non-Javadoc)
@@ -608,8 +602,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public int getTicksPerAnimalSpawns() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.server.getTicksPerAnimalSpawns();
 	}
 	
 	/* (non-Javadoc)
@@ -617,8 +610,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public int getTicksPerMonsterSpawns() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.server.getTicksPerMonsterSpawns();
 	}
 	
 	/* (non-Javadoc)
@@ -626,8 +618,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public Iterator<Recipe> recipeIterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.server.recipeIterator();
 	}
 	
 	/* (non-Javadoc)
@@ -635,8 +626,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public void resetRecipes() {
-		// TODO Auto-generated method stub
-		
+		this.server.resetRecipes();
 	}
 	
 	/* (non-Javadoc)
@@ -644,8 +634,7 @@ public class LizaCraftServer implements LizaServer{
 	 */
 	@Override
 	public boolean useExactLoginLocation() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.server.useExactLoginLocation();
 	}
 
 }

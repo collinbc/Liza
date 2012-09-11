@@ -1,8 +1,9 @@
 package lizaTest;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
-
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +17,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import serverUtils.LizaCraftPluginTester;
 import LizaCraft.LizaCraftWorld;
 import LizaInterface.LizaEntity;
 import LizaInterface.LizaServer;
 import LizaInterface.LizaWorld;
-import LizaInterfaceCraft.LizaCraftTestModule;
 
 
 // TODO: Auto-generated Javadoc
@@ -30,7 +31,7 @@ import LizaInterfaceCraft.LizaCraftTestModule;
 public class TestGetLizaEntity {
 	
 	/** The mock test module. */
-	private LizaCraftTestModule mockTestModule;
+	private LizaCraftPluginTester mockTestModule;
 	
 	/** The mock server. */
 	private LizaServer mockServer;
@@ -49,7 +50,7 @@ public class TestGetLizaEntity {
 	 */
 	@Before
 	public void setUp() {
-		this.mockTestModule = Mockito.mock(LizaCraftTestModule.class);
+		this.mockTestModule = Mockito.mock(LizaCraftPluginTester.class);
 		this.mockServer = Mockito.mock(LizaServer.class);
 		this.mockWorld = Mockito.mock(World.class);
 		
