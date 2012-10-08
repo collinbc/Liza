@@ -30,14 +30,15 @@ public class LizaServerThread extends Thread {
         	FileOutputStream fOut = new FileOutputStream(new File(filename), false);
             out = new PrintStream(fOut);
             
-            args = new String[4];
-            args[0] = "-h";
-            args[1] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_HOST_PROPERTY);
-            args[2] = "-p";
-            args[3] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_PORT_PROPERTY);
         } catch (FileNotFoundException e) {
-            
+        	final String warning = "The file set as serverLog property is a directory or could not be created. Standard System.out will be used for logging!";
+            Logger.log(Logger.LogType.WARNING, warning);
         }
+        args = new String[4];
+        args[0] = "-h";
+        args[1] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_HOST_PROPERTY);
+        args[2] = "-p";
+        args[3] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_PORT_PROPERTY);
     }
     
     /* (non-Javadoc)

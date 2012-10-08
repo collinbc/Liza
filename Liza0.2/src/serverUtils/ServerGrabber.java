@@ -7,6 +7,8 @@ import net.minecraft.server.ThreadServerApplication;
 
 import org.bukkit.craftbukkit.CraftServer;
 
+import serverUtils.Logger.LogType;
+
 /**
  * The Class ServerGrabber.
  */
@@ -55,7 +57,7 @@ public class ServerGrabber {
 			minecraftServer = (MinecraftServer) minecraftServerField.get(serverThread);
 			minecraftServerField.setAccessible(false);
 		} catch (Exception e) { // lol
-			e.printStackTrace();
+			Logger.log(LogType.ERROR, e.getMessage());
 		}
 		
 		return minecraftServer;

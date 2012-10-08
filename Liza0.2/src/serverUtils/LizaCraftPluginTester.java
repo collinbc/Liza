@@ -11,6 +11,8 @@ import org.bukkit.plugin.InvalidPluginException;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.UnknownDependencyException;
 
+import serverUtils.Logger.LogType;
+
 import exceptions.LizaPluginException;
 
 import LizaCraft.LizaCraftServer;
@@ -24,7 +26,7 @@ import LizaInterface.LizaServer;
 public class LizaCraftPluginTester {
 
 	private final static String DEFAULT_NAME = "LizaPluginTester";
-	
+
 	private ServerGrabber serverGrabber = new ServerGrabber();
 	private EventEnabler eventEnabler = new EventEnabler();
 
@@ -46,7 +48,7 @@ public class LizaCraftPluginTester {
 	public LizaCraftPluginTester() {
 		this(DEFAULT_NAME);
 	}
-	
+
 	/**
 	 * Instantiates a new LizaCraftPluginTester.
 	 * 
@@ -174,6 +176,7 @@ public class LizaCraftPluginTester {
 	 */
 	public void spoofEvent(Event e) {
 		this.server.getPluginManager().callEvent(e);
+		Logger.log(Logger.LogType.MESSAGE, "Event was dispatched in the server: " + e.getEventName());
 	}
 
 	/**
@@ -186,20 +189,23 @@ public class LizaCraftPluginTester {
 	public Plugin loadPlugin (File file) throws LizaPluginException {
 		Plugin ret = null;
 
-			try {
-				ret = this.server.getPluginManager().loadPlugin(file);
-			} catch (UnknownDependencyException | InvalidPluginException
-					| InvalidDescriptionException e) {
-				// this is a critical error, so throw an exception to the user
-				// to inform him about it
-				LizaPluginException pluginException = new LizaPluginException(e);
-				throw pluginException;
-			}
-			
-			this.server.getPluginManager().enablePlugin(ret);
+		try {
+			ret = this.server.getPluginManager().loadPlugin(file);
+		} catch (UnknownDependencyException | InvalidPluginException
+				| InvalidDescriptionException e) {
+			// this is a critical error, so throw an exception to the user
+			// to inform him about it
+			Logger.log(Logger.LogType.ERROR, "Problem loading the plug-in!");
+			Logger.log(Logger.LogType.ERROR, e.getMessage());
+			LizaPluginException pluginException = new LizaPluginException(e);
+			throw pluginException;
+		}
+
+		this.server.getPluginManager().enablePlugin(ret);
 
 		if (ret != null) {
 			this.plugins.put(file, ret);
+			Logger.log(LogType.MESSAGE, "Plug-in successfully loaded: " + ret.getName());
 		}
 
 		return ret;
@@ -238,6 +244,7 @@ public class LizaCraftPluginTester {
 
 		if (plugin != null) {
 			this.server.getPluginManager().disablePlugin(plugin);
+			Logger.log(LogType.MESSAGE, "Plugin disabled: " + plugin.getName());
 		}
 	}
 }

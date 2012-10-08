@@ -14,6 +14,9 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.SimplePluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import serverUtils.Logger;
+import serverUtils.Logger.LogType;
+
 import LizaInterface.LizaServer;
 
 /**
@@ -90,7 +93,7 @@ public class EventEnabler {
 			pluginList.set(server.getPluginManager(), plugins);
 			pluginList.setAccessible(false);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.log(LogType.ERROR, e.getMessage());
 		}
 
 		Map<String, Plugin> lookupNames;
@@ -104,7 +107,7 @@ public class EventEnabler {
 			lookupMap.set(server.getPluginManager(), lookupNames);
 			lookupMap.setAccessible(false);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.log(LogType.ERROR, e.getMessage());
 		}
 	}
 
@@ -146,7 +149,7 @@ public class EventEnabler {
 			descriptionField.set(eventListener, desc);
 			descriptionField.setAccessible(false);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.log(LogType.ERROR, e.getMessage());
 		}
 	}
 
@@ -177,7 +180,7 @@ public class EventEnabler {
 			}
 			pluginManagerMap.setAccessible(false);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.log(LogType.ERROR, e.getMessage());
 		}
 		return pluginLoader;
 	}
