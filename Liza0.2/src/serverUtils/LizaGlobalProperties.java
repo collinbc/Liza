@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import serverUtils.Logger.LogType;
+
 /** 
  * This is a singleton class giving access to all global properties for Liza
  * @author kraevam
@@ -54,6 +56,7 @@ public enum LizaGlobalProperties {
 
 		} catch (IOException e) {
 			// problems reading the file, use default values
+			Logger.log(LogType.WARNING, "Properties file could not be read. The system will use default configuration!");
 			properties.put(SERVER_HOST_PROPERTY, DEFAULT_HOST);
 			properties.put(SERVER_PORT_PROPERTY, DEFAULT_PORT);
 			properties.put(SERVER_OUTFILE_PROPERTY, DEFAULT_OUTFILE);

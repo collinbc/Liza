@@ -220,7 +220,7 @@ public class LizaCraftPluginTester {
 		if (ret != null) {
 			this.plugins.put(file, ret);
 			Logger.log(LogType.MESSAGE, "Plug-in successfully loaded: " + ret.getName());
-}
+		}
 
 		return ret;
 	}
