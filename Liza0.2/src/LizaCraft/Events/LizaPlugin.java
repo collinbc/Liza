@@ -55,6 +55,7 @@ public class LizaPlugin extends JavaPlugin implements Listener {
      *
      * @param event the event
      * @throws IllegalArgumentException the illegal argument exception
+     *@ requires event != null;
      */
     public void registerEvent(Class<? extends Event> event) throws IllegalArgumentException {
         PluginManager pm = this.getServer().getPluginManager();
@@ -89,6 +90,7 @@ public class LizaPlugin extends JavaPlugin implements Listener {
      *
      * @param event the event
      * @param listener the listener
+     *@ requires event != null and listener != null;
      */
     public void registerEvent(Class<? extends Event> event, LizaListener listener) {
         registerEvent(event);
@@ -99,6 +101,7 @@ public class LizaPlugin extends JavaPlugin implements Listener {
      * Handle event.
      *
      * @param e the e
+     *@ requires e != null;
      */
     @EventHandler(priority=EventPriority.MONITOR)
     public void handleEvent(Event e) {
@@ -111,6 +114,7 @@ public class LizaPlugin extends JavaPlugin implements Listener {
      *
      * @param event the event
      * @param testModule the test module
+     *@ requires event != null and listener != null;
      */
     public void waitForEvent(Class<? extends Event> event, LizaCraftPluginTester testModule) {
         this.waitingList.put(event, testModule);
@@ -120,6 +124,7 @@ public class LizaPlugin extends JavaPlugin implements Listener {
      * Release from event.
      *
      * @param event the event
+     *@ requires event != null;
      */
     public void releaseFromEvent(Event event) {
         LizaCraftPluginTester waitee = this.waitingList.remove(event.getClass());
@@ -132,6 +137,7 @@ public class LizaPlugin extends JavaPlugin implements Listener {
      * Relay event.
      *
      * @param e the e
+     *@ requires e != null;
      */
     public void relayEvent(Event e) {
         LizaListener ll = this.listenerList.get(e.getClass());

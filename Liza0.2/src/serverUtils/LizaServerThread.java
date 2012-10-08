@@ -13,15 +13,17 @@ import org.bukkit.craftbukkit.Main;
 public class LizaServerThread extends Thread {
 
 	/** server start args */
-	private String[] args;
+	private /*@ spec_public @*/ String[] args;
 	
 	/** The out. */
-	private PrintStream out;
+	private /*@ spec_public @*/ PrintStream out;
     
     /**
      * Instantiates a new liza server thread.
      *
      * @param name the name
+     *@ requires name != null;
+     *@ ensures this.out != null and this.args != null;
      */
     public LizaServerThread(String name) {
         super(name);
@@ -30,18 +32,20 @@ public class LizaServerThread extends Thread {
         	FileOutputStream fOut = new FileOutputStream(new File(filename), false);
             out = new PrintStream(fOut);
             
-            args = new String[4];
-            args[0] = "-h";
-            args[1] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_HOST_PROPERTY);
-            args[2] = "-p";
-            args[3] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_PORT_PROPERTY);
         } catch (FileNotFoundException e) {
-            
+        	final String warning = "The file set as serverLog property is a directory or could not be created. Standard System.out will be used for logging!";
+            Logger.log(Logger.LogType.WARNING, warning);
         }
+        args = new String[4];
+        args[0] = "-h";
+        args[1] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_HOST_PROPERTY);
+        args[2] = "-p";
+        args[3] = LizaGlobalProperties.INSTANCE.getProperty(LizaGlobalProperties.SERVER_PORT_PROPERTY);
     }
     
     /* (non-Javadoc)
      * @see java.lang.Thread#run()
+     *@ requires this.out != null and this.args != null;
      */
     public void run() {
         System.setOut(this.out);

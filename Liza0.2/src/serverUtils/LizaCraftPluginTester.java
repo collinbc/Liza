@@ -11,6 +11,8 @@ import org.bukkit.plugin.InvalidPluginException;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.UnknownDependencyException;
 
+import serverUtils.Logger.LogType;
+
 import exceptions.LizaPluginException;
 
 import LizaCraft.LizaCraftServer;
@@ -24,19 +26,19 @@ import LizaInterface.LizaServer;
 public class LizaCraftPluginTester {
 
 	private final static String DEFAULT_NAME = "LizaPluginTester";
-	
+
 	private ServerGrabber serverGrabber = new ServerGrabber();
 	private EventEnabler eventEnabler = new EventEnabler();
 
 	private LizaServerThread serverThread;
-	private LizaServer server;
+	private /*@ spec_public @*/ LizaServer server;
 
 	private LizaPlugin eventListener;
 
-	private String name;
+	private /*@ spec_public @*/ String name;
 
-	private boolean waiting = false;
-	private Event waitingOn;
+	private /*@ spec_public @*/ boolean waiting = false;
+	private /*@ spec_public @*/ Event waitingOn;
 
 	private Map<File, Plugin> plugins = new HashMap<File, Plugin>();
 
@@ -46,12 +48,14 @@ public class LizaCraftPluginTester {
 	public LizaCraftPluginTester() {
 		this(DEFAULT_NAME);
 	}
-	
+
 	/**
 	 * Instantiates a new LizaCraftPluginTester.
 	 * 
 	 * @param name
 	 *            The name of the module
+	 *@ requires name != null;
+	 *@ assignable this.name;
 	 */
 	public LizaCraftPluginTester(String name) {
 		this.name = name;
@@ -67,6 +71,8 @@ public class LizaCraftPluginTester {
 	 *            The name of the module
 	 * @param server
 	 *            The Bukkit server
+	 *@ requires name != null and server != null;
+	 *@ assignable this.name this.server;
 	 */
 	public LizaCraftPluginTester(String name, Server server) {
 		this(name);
@@ -113,6 +119,9 @@ public class LizaCraftPluginTester {
 	 * @param event
 	 *            The event type to wait on
 	 * @return The event object
+	 *@ require event != null;
+	 *@ assignable this.waiting this.waitingOn;
+	 *@ ensure \result != null;
 	 */
 	public Event waitForEvent(Class<? extends Event> event) {
 		this.waiting = true;
@@ -127,6 +136,9 @@ public class LizaCraftPluginTester {
 	 * 
 	 * @param event
 	 *            the event type
+	 *@ require event != null;
+	 *@ assignable this.waiting this.waitingOn;
+	 *@ ensure this.waitingOn == event and this.waiting == false;
 	 */
 	public void release(Event event) {
 		this.waitingOn = event;
@@ -137,6 +149,7 @@ public class LizaCraftPluginTester {
 	 * Gets the event listener.
 	 * 
 	 * @return the event listener
+	 *@ ensure \result != null;
 	 */
 	public LizaPlugin getEventListener() {
 		return this.eventListener;
@@ -156,6 +169,7 @@ public class LizaCraftPluginTester {
 		}
 
 		this.server = new LizaCraftServer(this.serverGrabber.searchThreads());
+		//@ this.server != null and this.server.getBukkitVersion() != null;
 	}
 
 	/**
@@ -171,9 +185,11 @@ public class LizaCraftPluginTester {
 	 * 
 	 * @param e
 	 *            the event
+	 *@ requires e != null;
 	 */
 	public void spoofEvent(Event e) {
 		this.server.getPluginManager().callEvent(e);
+		Logger.log(Logger.LogType.MESSAGE, "Event was dispatched in the server: " + e.getEventName());
 	}
 
 	/**
@@ -182,25 +198,29 @@ public class LizaCraftPluginTester {
 	 * @param file
 	 *            the plugin file
 	 * @return the plugin
+	 *@ requires file != null;
 	 */
 	public Plugin loadPlugin (File file) throws LizaPluginException {
 		Plugin ret = null;
 
-			try {
-				ret = this.server.getPluginManager().loadPlugin(file);
-			} catch (UnknownDependencyException | InvalidPluginException
-					| InvalidDescriptionException e) {
-				// this is a critical error, so throw an exception to the user
-				// to inform him about it
-				LizaPluginException pluginException = new LizaPluginException(e);
-				throw pluginException;
-			}
-			
-			this.server.getPluginManager().enablePlugin(ret);
+		try {
+			ret = this.server.getPluginManager().loadPlugin(file);
+		} catch (UnknownDependencyException | InvalidPluginException
+				| InvalidDescriptionException e) {
+			// this is a critical error, so throw an exception to the user
+			// to inform him about it
+			Logger.log(Logger.LogType.ERROR, "Problem loading the plug-in!");
+			Logger.log(Logger.LogType.ERROR, e.getMessage());
+			LizaPluginException pluginException = new LizaPluginException(e);
+			throw pluginException;
+		}
+
+		this.server.getPluginManager().enablePlugin(ret);
 
 		if (ret != null) {
 			this.plugins.put(file, ret);
-		}
+			Logger.log(LogType.MESSAGE, "Plug-in successfully loaded: " + ret.getName());
+}
 
 		return ret;
 	}
@@ -210,6 +230,7 @@ public class LizaCraftPluginTester {
 	 * 
 	 * @param file
 	 *            the plugin file
+	 *@ requires file != null;
 	 */
 	public void enablePlugin(File file) {
 		this.enablePlugin(this.plugins.get(file));
@@ -220,6 +241,7 @@ public class LizaCraftPluginTester {
 	 * 
 	 * @param plugin
 	 *            the plugin
+	 *@ requires plugin != null;
 	 */
 	public void enablePlugin(Plugin plugin) {
 		if (plugin != null) {
@@ -232,12 +254,14 @@ public class LizaCraftPluginTester {
 	 * 
 	 * @param file
 	 *            the plugin file
+	 *@ requires file != null;
 	 */
 	public void disablePlugin(final File file) {
 		Plugin plugin = this.plugins.get(file);
 
 		if (plugin != null) {
 			this.server.getPluginManager().disablePlugin(plugin);
+			Logger.log(LogType.MESSAGE, "Plugin disabled: " + plugin.getName());
 		}
 	}
 }

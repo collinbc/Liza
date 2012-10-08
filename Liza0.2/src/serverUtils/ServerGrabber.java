@@ -7,6 +7,8 @@ import net.minecraft.server.ThreadServerApplication;
 
 import org.bukkit.craftbukkit.CraftServer;
 
+import serverUtils.Logger.LogType;
+
 /**
  * The Class ServerGrabber.
  */
@@ -28,13 +30,16 @@ public class ServerGrabber {
 		Thread[] threads;
 		ThreadServerApplication tsa = null;
 		
+		//@ tsa == null;
 		while (tsa == null) {
 			threads = this.getThreads();
 			
 			tsa = getThreadServerApplication(threads);
 		}
+		//@ tsa != null;
 		
 		MinecraftServer minecraftServer = getMinecraftServer(tsa);
+		
 
 		return minecraftServer.server;
 	}
@@ -44,6 +49,9 @@ public class ServerGrabber {
 	 *
 	 * @param serverThread the server thread
 	 * @return the minecraft server
+	 *@ noException ::= true;
+	 *@ requires serverThread != null;
+	 *@ ensures noException ==> \result != null;
 	 */
 	private MinecraftServer getMinecraftServer(ThreadServerApplication serverThread) {
 		Class<? extends ThreadServerApplication> serverThreadClass = serverThread.getClass();
@@ -52,12 +60,16 @@ public class ServerGrabber {
 		try {
 			minecraftServerField = serverThreadClass.getDeclaredField(MINECRAFT_SERVER_FIELD_NAME);
 			minecraftServerField.setAccessible(true);
+			//@ minecraftServerField.isAccessible();
 			minecraftServer = (MinecraftServer) minecraftServerField.get(serverThread);
 			minecraftServerField.setAccessible(false);
+			//@ !minecraftServerField.isAccessible();
 		} catch (Exception e) { // lol
-			e.printStackTrace();
+			//@ noException ::= false;
+			Logger.log(LogType.ERROR, e.getMessage());
 		}
 		
+		//@ !minecraftServerField.isAccessible();
 		return minecraftServer;
 	}
 
@@ -75,6 +87,7 @@ public class ServerGrabber {
 			if (t != null && t.getName() != null
 					&& t.getName().equals(MINECRAFT_SERVER_THREAD_NAME)) {
 				serverThread = (ThreadServerApplication) t;
+				//@ serverThread != null;
 				break;
 			}
 		}
@@ -93,8 +106,10 @@ public class ServerGrabber {
 		while (rootGroup.getParent() != null) {
 			rootGroup = rootGroup.getParent();
 		}
+		//@ rootGroup.getParent() == null;
 		
 		Thread threads[] = new Thread[rootGroup.activeCount()];
+		//@ threads.length > 0;
 		
 		// activeCount() only provides an estimate for the number of
 		// running threads, so this loop ensures that all threads are
